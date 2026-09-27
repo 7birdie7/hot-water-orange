@@ -18,3 +18,32 @@ body{background:linear-gradient(180deg,#fff 0,#fff 68%,#f5f8f9 100%)}
 .faq-list details{background:linear-gradient(90deg,rgba(238,243,244,.7),transparent);padding:1.25rem 1rem}.faq-list details[open]{background:#f4f7f8;border-left:3px solid var(--ochre)}
 @media(max-width:900px){.mist-section{grid-template-columns:1fr}.mist-section img{min-height:360px}.article-card{grid-template-columns:70px 1fr}.long-article{margin-top:0;box-shadow:none}}
 @media(max-width:600px){.article-card{grid-template-columns:1fr;gap:.4rem}.article-no{font-size:1.8rem}.article-nav{flex-direction:column}.mist-copy{padding:3.2rem 1.2rem}}
+
+/* Alternating twilight and steam atmosphere */
+.section:has(> .cards),.section:has(> .steps){
+  max-width:none;
+  padding-left:max(clamp(1.1rem,7vw,7rem),calc((100vw - 1500px)/2 + 7rem));
+  padding-right:max(clamp(1.1rem,7vw,7rem),calc((100vw - 1500px)/2 + 7rem));
+  background-image:linear-gradient(105deg,rgba(221,231,235,.92),rgba(239,244,246,.78) 48%,rgba(190,207,215,.88)),url('/assets/steam-mist-background.webp');
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+.section:has(> .cards):before,.section:has(> .steps):before{
+  content:"";
+  position:absolute;
+  width:34rem;height:34rem;
+  right:-15rem;top:-19rem;
+  border-radius:50%;
+  background:rgba(255,255,255,.28);
+  filter:blur(28px);
+  pointer-events:none;
+}
+.section:has(> .cards)>*,.section:has(> .steps)>*{position:relative;z-index:1}
+.section:has(> .cards) .card{background:rgba(255,255,255,.93);border-color:rgba(255,255,255,.75);box-shadow:0 12px 34px rgba(23,56,74,.10);backdrop-filter:blur(5px)}
+.section:has(> .cards) .card:hover{background:#fff;box-shadow:0 22px 55px rgba(23,56,74,.17)}
+.section:has(> .steps) .steps article{background:rgba(255,255,255,.88);box-shadow:0 12px 34px rgba(23,56,74,.09);backdrop-filter:blur(5px)}
+.page-hero[style*="misty-orange-morning"] .hero-shade{background:linear-gradient(90deg,rgba(13,39,54,.88),rgba(24,57,72,.60) 46%,rgba(34,66,78,.12) 78%)}
+.page-hero[style*="twilight-established-home"] .hero-shade{background:linear-gradient(90deg,rgba(8,25,38,.92),rgba(12,35,49,.67) 45%,rgba(8,25,38,.12) 78%)}
+@media(max-width:700px){.section:has(> .cards),.section:has(> .steps){padding-left:1.1rem;padding-right:1.1rem}.page-hero{background-position:62% center}}
