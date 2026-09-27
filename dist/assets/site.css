@@ -68,11 +68,11 @@ footer:before{content:"";position:absolute;inset:0;background:linear-gradient(11
 .page-hero[style*="heat-pump-blue-hour"]{background-position:58% center}
 .page-hero[style*="orange-cold-twilight"]{background-position:center}
 
-/* Muted ochre/tan interface palette; photographic warmth remains unchanged */
-:root{--ochre:#ae8752}
-.button:hover{box-shadow:0 10px 30px rgba(174,135,82,.28)}
-.intro:before{color:rgba(174,135,82,.08)}
-.card:after{border-color:rgba(174,135,82,.20)}
-.card:hover:after{background:rgba(174,135,82,.07)}
-.article-no{color:rgba(174,135,82,.72)}
-.footer-grid h2{color:#d6b889}
+/* Warm copper-ochre interface palette, matched to Blue Mountains Hot Water */
+:root{--ochre:#b8731e}
+.button:hover{box-shadow:0 10px 30px rgba(184,115,30,.30)}
+.intro:before{color:rgba(184,115,30,.09)}
+.card:after{border-color:rgba(184,115,30,.22)}
+.card:hover:after{background:rgba(184,115,30,.08)}
+.article-no{color:rgba(184,115,30,.76)}
+.footer-grid h2{color:#dda45f}
