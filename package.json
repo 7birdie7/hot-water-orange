@@ -1,0 +1,13 @@
+{
+  "name": "hot-water-orange",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "python build_site.py",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
