@@ -67,3 +67,12 @@ footer:before{content:"";position:absolute;inset:0;background:linear-gradient(11
 .page-hero[style*="repair-copper-twilight"]{background-position:58% center}
 .page-hero[style*="heat-pump-blue-hour"]{background-position:58% center}
 .page-hero[style*="orange-cold-twilight"]{background-position:center}
+
+/* Muted ochre/tan interface palette; photographic warmth remains unchanged */
+:root{--ochre:#ae8752}
+.button:hover{box-shadow:0 10px 30px rgba(174,135,82,.28)}
+.intro:before{color:rgba(174,135,82,.08)}
+.card:after{border-color:rgba(174,135,82,.20)}
+.card:hover:after{background:rgba(174,135,82,.07)}
+.article-no{color:rgba(174,135,82,.72)}
+.footer-grid h2{color:#d6b889}
