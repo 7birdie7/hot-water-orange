@@ -1,0 +1,9 @@
+# Orange Hot Water
+
+Independent online information and enquiry website for hot-water repairs, replacements and upgrades in Orange NSW and selected nearby towns.
+
+Canonical site: https://hotwaterorange.com/
+Sitemap: https://hotwaterorange.com/sitemap.xml
+Contact: info@hotwaterorange.com
+
+Core resources: /services/, /locations/, /advice/, /faq/
