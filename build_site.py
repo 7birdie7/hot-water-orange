@@ -88,7 +88,10 @@ def cta(title="Tell us what is happening"):
 
 def layout(title, desc, body, path, schema_type="WebPage"):
     canonical = DOMAIN + (path if path.endswith('/') else path + '/')
-    schema = json.dumps({"@context":"https://schema.org","@type":schema_type,"name":title,"description":desc,"url":canonical,"isPartOf":{"@type":"WebSite","name":"Orange Hot Water","url":f"{DOMAIN}/"}}, ensure_ascii=False)
+    schema_data = {"@context":"https://schema.org","@type":schema_type,"name":title,"description":desc,"url":canonical,"isPartOf":{"@type":"WebSite","name":"Orange Hot Water","url":f"{DOMAIN}/"}}
+    if schema_type == "Article":
+        schema_data["headline"] = title
+    schema = json.dumps(schema_data, ensure_ascii=False)
     return f'''<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)}</title><meta name="description" content="{escape(desc)}"><link rel="canonical" href="{canonical}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(desc)}"><meta property="og:url" content="{canonical}"><link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">{schema}</script><script>(function(c,l,a,r,i,t,y){{c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)}})(window,document,"clarity","script","ypa0cp7z4y");</script></head><body>{nav()}<main>{body}</main>{footer()}<script src="/assets/site.js" defer></script></body></html>'''
 
 def write(path, html):
